@@ -2,7 +2,7 @@
 // if user is running mozilla then use it's built-in WebSocket
 window.WebSocket = window.WebSocket || window.MozWebSocket;
 
-var connection = new WebSocket('ws://shielded-hamlet-63582.herokuapp.com');
+var connection = new WebSocket('ws://secure-brook-39737.herokuapp.com');
 var idClient;
 connection.onopen = function () {
   let data = {
