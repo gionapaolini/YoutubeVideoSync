@@ -8,11 +8,13 @@
 
 </head>
 <body>
-  <header>
-    <h1> Watch a video with Gionny </h1>
-  </header>
 
-  <div id="player"><%=videolink%></div>
+        <div class="body" ng-app="myApp">
+            <div class="wrapper" ng-controller="MyCtrl">
+              <h1 id="title"> Enjoy </h1>
+                <div id="player"><%=videolink%></div>
+            </div>
+        </div>
 
   <script src="assets/js/youtubescript.js"></script>
   <script src="assets/js/socketConnection.js"></script>

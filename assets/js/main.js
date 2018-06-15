@@ -6,14 +6,27 @@ function initialise() {
 
 function submitFunction(event) {
   event.preventDefault();
-  let input = document.querySelector("input");
-  let idVideo = getIDvideoFromUrl(input.value);
-  input.value = idVideo;
-  event.target.submit();
+  let idVideo = validateYouTubeUrl(event);
 }
 
 
-function getIDvideoFromUrl(url) {
-  let strings = url.split("=");
-  return strings[strings.length-1];
+
+function validateYouTubeUrl(event){
+
+  let input = document.querySelector("input");
+  let url = input.value;
+  if (url != undefined || url != '') {
+      var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
+      var match = url.match(regExp);
+      if (match && match[2].length == 11) {
+          // Do anything for being valid
+          // if need to change the url to embed url then use below line
+          input.value = match[2];
+          event.target.submit();
+
+      }
+      else {
+          input.value = "";
+      }
+  }
 }

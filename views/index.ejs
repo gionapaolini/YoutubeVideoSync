@@ -8,15 +8,20 @@
 
 </head>
 <body>
-  <header>
-    <h1> Watch a video with Gionny </h1>
-  </header>
 
-  <form action="/watch" method="get">
-    <input type="text" name="videolink" />
-    <input type="submit" value="Watch Together!" />
 
-  </form>
+
+
+
+  <div class="body" ng-app="myApp">
+      <div class="wrapper" ng-controller="MyCtrl">
+        <h1> Watch a video with Gionny </h1>
+        <form action="/watch" method="get">
+          <input class="inputVideoLink" type='text' name="videolink" />
+          <input class="inputVideoLink" type="submit" value="Watch Together!" />
+        </form>
+      </div>
+  </div>
 
 
 
